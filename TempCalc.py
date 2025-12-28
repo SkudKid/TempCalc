@@ -41,13 +41,13 @@ def main(): #display main menu to user and ask for users input for an option
             cel = get_temperature(unit)
             if cel is None:
                 continue
-            print(f"{cel}°C is equal to {cel_to_fah(cel)}°F")
+            print(f"{cel}°C is equal to {cel_to_fah(cel):.1f}°F")
         elif choice == 2:
             unit = "Fahrenheit"
             fah = get_temperature(unit)
             if fah is None:
                 continue
-            print(f"{fah}°F is equal to {fah_to_cel(fah)}°C")
+            print(f"{fah}°F is equal to {fah_to_cel(fah):.1f}°C")
         elif choice == 3:
             print("Goodbye!")
             return 0
