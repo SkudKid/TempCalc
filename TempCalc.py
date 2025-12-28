@@ -3,7 +3,7 @@
 # Program 1 of many post-college graduation to practice Python skills. starting basic to work onto more complex work.
 #FIXED ON GITHUB, NEW REPO UNDER TEMPCALC
 
-ERROR = "Invalid input. Please enter a numeric value between 1 and 3."
+ERROR = "Invalid input. Please enter a numeric value."
 
 def get_temperature(type):
     try:
