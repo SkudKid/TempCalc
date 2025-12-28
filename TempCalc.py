@@ -3,20 +3,21 @@
 # Program 1 of many post-college graduation to practice Python skills. starting basic to work onto more complex work.
 #FIXED ON GITHUB, NEW REPO UNDER TEMPCALC
 
-ERROR = "Invalid input. Please enter a numeric value."
+ERROR_NUM = "Invalid input. Please enter a numeric value."
+ERROR_MENU = "Invalid menu option. Please enter a numeric value between 1 and 3."
 
-def get_temperature(type):
+def get_temperature(unit):
     try:
-        return float(input(f"Enter temperature in {type}: "))
+        return float(input(f"Enter temperature in {unit}: "))
     except ValueError:
-        print(ERROR)
+        print(ERROR_NUM)
         return None
 
 def get_choice():
     try:
         return int(input("Select an option (1-3): "))
     except ValueError:
-        print(ERROR)
+        print(ERROR_MENU)
         return None
 
 def cel_to_fah(temp): #ask user celsius temperature and convert to fahrenheit
@@ -36,18 +37,22 @@ def main(): #display main menu to user and ask for users input for an option
         if choice is None:
             continue
         elif choice == 1:
-            type = "Celsius"
-            cel = get_temperature(type)
+            unit = "Celsius"
+            cel = get_temperature(unit)
+            if cel is None:
+                continue
             print(f"{cel}°C is equal to {cel_to_fah(cel)}°F")
         elif choice == 2:
-            type = "Fahrenheit"
-            fah = get_temperature(type)
+            unit = "Fahrenheit"
+            fah = get_temperature(unit)
+            if fah is None:
+                continue
             print(f"{fah}°F is equal to {fah_to_cel(fah)}°C")
         elif choice == 3:
             print("Goodbye!")
             return 0
         else:
-            print(ERROR)
+            print(ERROR_MENU)
             continue
 
 if __name__ == "__main__":
